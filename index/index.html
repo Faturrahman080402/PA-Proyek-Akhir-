@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Advanced Markers with HTML</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="module" src="index.js"></script>
+  </head><!DOCTYPE html>
+<html>
+  <head>
+    <title>Contoh Memanggil API Key Pada Map API</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWnYSD0G_JeGPjX6m1CIjk_KI6nywBVgc"></script>
+    <script>
+      function initMap() {
+        var myLatLng = {lat: 2.2375, lng: 99.0372};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+      var map = new google.maps.Map(document.getElementById("mapid"), {
+  center: { lat: 2.6738, lng: 98.8215 },
+  zoom: 10,
+  restriction: {
+    latLngBounds: {
+      north: 4.9,
+      south: 1.2,
+      east: 99.9167,
+      west: 97.8,
+    },
+  },
+});
+    </script>
+  </head>
+  <body onload="initMap()">
+    <div id="map" style="height: 600px; width: 80%;"></div>
+  </body>
+</html>
