@@ -1,0 +1,11 @@
+CREATE DATABASE wisata;
+
+CREATE TABLE wisata (
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  alamat VARCHAR(255) NOT NULL,
+  nama_wisata VARCHAR(255) NOT NULL,
+  nama_penginapan VARCHAR(255) NOT NULL,
+  transportasi VARCHAR(255) NOT NULL,
+  rumah_makan VARCHAR(255) NOT NULL,
+  souvenir VARCHAR(255) NOT NULL
+);

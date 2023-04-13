@@ -1,149 +1,153 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Peta dari Bandara Silangit ke Bandara Kualanamu</title>
-    <link rel="stylesheet" href="/CSS/map.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="../CSS/map.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <style>
-        /* CSS untuk sidebar */
-        .sidebar {
-            position: absolute;
-            top: 0;
-            left: -300px;
-            width: 300px;
-            height: 100%;
-            background-color: white;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
+      /* CSS untuk sidebar */
+      .sidebar {
+        position: absolute;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: white;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
 
-        .sidebar.open {
-            left: 0;
-        }
+      .sidebar.open {
+        left: 0;
+      }
 
-        .sidebar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px;
-            background-color: #f5f5f5;
-        }
+      .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        background-color: #f5f5f5;
+      }
 
-        .sidebar-content {
-            padding: 16px;
-        }
+      .sidebar-content {
+        padding: 16px;
+      }
 
-        /* CSS untuk tombol menu */
-        .menu-btn {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 22px;
-            cursor: pointer;
-            z-index: 999;
-        }
+      /* CSS untuk tombol menu */
+      .menu-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        cursor: pointer;
+        z-index: 999;
+      }
 
-        .menu-btn__line {
-            width: 100%;
-            height: 2px;
-            background-color: black;
-            transition: all 0.3s ease;
-        }
+      .menu-btn__line {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        transition: all 0.3s ease;
+      }
 
-        .menu-btn__line:nth-child(1) {
-            transform: translateY(0px) rotate(0deg);
-        }
+      .menu-btn__line:nth-child(1) {
+        transform: translateY(0px) rotate(0deg);
+      }
 
-        .menu-btn__line:nth-child(2) {
-            transform: translateY(10px) rotate(0deg);
-        }
+      .menu-btn__line:nth-child(2) {
+        transform: translateY(10px) rotate(0deg);
+      }
 
-        .menu-btn__line:nth-child(3) {
-            transform: translateY(5px) rotate(0deg);
-        }
+      .menu-btn__line:nth-child(3) {
+        transform: translateY(5px) rotate(0deg);
+      }
 
-        .menu-btn.open .menu-btn__line:nth-child(1) {
-            transform: translateY(5px) rotate(45deg);
-        }
+      .menu-btn.open .menu-btn__line:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+      }
 
-        .menu-btn.open .menu-btn__line:nth-child(2) {
-            transform: translateY(5px) rotate(-45deg);
-        }
+      .menu-btn.open .menu-btn__line:nth-child(2) {
+        transform: translateY(5px) rotate(-45deg);
+      }
 
-        .menu-btn.open .menu-btn__line:nth-child(3) {
-            opacity: 0;
-        }
+      .menu-btn.open .menu-btn__line:nth-child(3) {
+        opacity: 0;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>My Website</h1>
-        <img src="https://via.placeholder.com/50" alt="Logo">
+      <h1>My Website</h1>
+      <img src="https://via.placeholder.com/50" alt="Logo" />
     </header>
 
     <nav>
-        <a class="active" href="#">Map</a>
-        <a href="#">Login</a>
-        <a href="#">About Us</a>
-        <a href="#">Menu Lainnya</a>
-        <!-- Tambahkan menu baru -->
-        <a id="location-info-btn" href="#">Informasi Lokasi</a>
+      <a class="active" href="#">Map</a>
+      <a href="#">Login</a>
+      <a href="#">About Us</a>
+      <a href="#">Menu Lainnya</a>
+      <!-- Tambahkan menu baru -->
+      <a id="location-info-btn" href="#">Informasi Lokasi</a>
     </nav>
 
     <div id="mapid"></div>
 
     <!-- Tambahkan sidebar -->
     <div id="sidebar" class="sidebar">
-        <div class="sidebar-header">
-            <h2>Informasi Lokasi</h2>
-            <div class="menu-btn" id="sidebar-toggle">
-                <div class="menu-btn__line"></div>
-                <div class="menu-btn__line"></div>
-                <div class="menu-btn__line"></div>
-            </div>
+      <div class="sidebar-header">
+        <h2>Informasi Lokasi</h2>
+        <div class="menu-btn" id="sidebar-toggle">
+          <div class="menu-btn__line"></div>
+          <div class="menu-btn__line"></div>
+          <div class="menu-btn__line"></div>
         </div>
-        <div class="sidebar-content">
-            <p>Pilih lokasi pada map untuk melihat informasi.</p>
-        </div>/html
+      </div>
+      <div class="sidebar-content">
+        <p>Pilih lokasi pada map untuk melihat informasi.</p>
+      </div>
+      /html
     </div>
     <script>
-        var map = L.map('mapid').setView([2.7998, 98.9831], 9);
+      var map = L.map("mapid").setView([2.7998, 98.9831], 9);
 
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'YOUR_MAPBOX_ACCESS_TOKEN'
-        }).addTo(map);
+      L.tileLayer(
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+        {
+          attribution:
+            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 18,
+          id: "mapbox/streets-v11",
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken: "YOUR_MAPBOX_ACCESS_TOKEN",
+        }
+      ).addTo(map);
 
-        // Tambahkan fungsi untuk toggle sidebar
-        var sidebarToggle = document.getElementById('sidebar-toggle');
-        var sidebar = document.getElementById('sidebar');
+      // Tambahkan fungsi untuk toggle sidebar
+      var sidebarToggle = document.getElementById("sidebar-toggle");
+      var sidebar = document.getElementById("sidebar");
 
-        sidebarToggle.addEventListener('click', function () {
-            sidebar.classList.toggle('open');
-        });
+      sidebarToggle.addEventListener("click", function () {
+        sidebar.classList.toggle("open");
+      });
 
-        // Tambahkan event click untuk menu informasi lokasi
-        var locationInfoBtn = document.getElementById('location-info-btn');
+      // Tambahkan event click untuk menu informasi lokasi
+      var locationInfoBtn = document.getElementById("location-info-btn");
 
-        locationInfoBtn.addEventListener('click', function () {
-            sidebar.classList.add('open');
-        });
-
+      locationInfoBtn.addEventListener("click", function () {
+        sidebar.classList.add("open");
+      });
     </script>
-</body>
+  </body>
 </html>
-
-
