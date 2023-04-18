@@ -45,17 +45,17 @@
             <li><a href="../PHP/home.php">Home</a></li>
             <li><a href="../PHP/map.php">Map</a></li>
             <li><a href="">About</a></li>
-            <li><a href="">contact</a></li>
-            <li><a href="">Login</a></li>
+            <li><a href="../PHP/login.php">Login</a></li>
+            <li><a href="../PHP/register.php">Register</a></li>
         </ul>
     </div>
     <script type="text/javascript">
-    function toggle() {
-        var sec = document.getElementById("sec");
-        var nav = document.getElementById("navigation");
-        sec.classList.toggle("active");
-        nav.classList.toggle("active");
-    }
+        function toggle() {
+            var sec = document.getElementById("sec");
+            var nav = document.getElementById("navigation");
+            sec.classList.toggle("active");
+            nav.classList.toggle("active");
+        }
     </script>
     <section class="about">
         <div class="contentBx">
@@ -64,10 +64,9 @@
             <h5>WE CREATE THIS JUST FOR EXAMPLE</h5>
             <br />
             <p class="text">
-                <br /><br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Blanditiis magnam porro tempore neque nobis non quidem placeat
-                sapiente quia? Molestiae, cumque ipsa sit dolorem quo necessitatibus
-                molestias facilis voluptate distinctio.
+                <br /><br />Dapatkan informasi terperinci tentang destinasi wisata yang Anda minati. Mulai dari sejarah,
+                budaya, kuliner, atraksi, hingga tips perjalanan, kami menyajikan informasi yang komprehensif dan
+                terkini untuk membantu Anda merencanakan perjalanan yang tak terlupakan.
             </p>
         </div>
     </section>

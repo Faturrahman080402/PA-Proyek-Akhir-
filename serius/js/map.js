@@ -1,18 +1,16 @@
-// Tambahkan fungsi untuk toggle sidebar
-var sidebarToggle = document.getElementById("sidebar-toggle");
-var sidebar = document.getElementById("sidebar");
+function initMap() {
+  var myLatLng = { lat: 2.2375, lng: 99.0372 };
+  var map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 12,
+    center: myLatLng,
+  });
 
-sidebarToggle.addEventListener("click", function () {
-  sidebar.classList.toggle("open");
-});
-
-// Tambahkan event click untuk menu informasi lokasi
-var locationInfoBtn = document.getElementById("location-info-btn");
-
-locationInfoBtn.addEventListener("click", function () {
-  sidebar.classList.add("open");
-});
-
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: "Hello World!",
+  });
+}
 var map = new google.maps.Map(document.getElementById("mapid"), {
   center: { lat: 2.6738, lng: 98.8215 },
   zoom: 10,
@@ -25,89 +23,114 @@ var map = new google.maps.Map(document.getElementById("mapid"), {
     },
   },
 });
-
-var bandaraSilangit = new google.maps.Marker({
-  position: { lat: 2.2609, lng: 98.9908 },
-  map: map,
-});
-var bandaraKualanamu = new google.maps.Marker({
-  position: { lat: 3.6363, lng: 98.8633 },
-  map: map,
-});
-
-var currentRoute;
-
-function getRoute(startLat, startLng, endLat, endLng) {
-  var url =
-    "https://api.openrouteservice.org/v2/directions/driving-car?api_key=AIzaSyAW7zOO9RsrHaI3KGZus3H8pUiHb9bNzmk&start=" +
-    startLng +
-    "," +
-    startLat +
-    "&end=" +
-    endLng +
-    "," +
-    endLat;
-  fetch(url)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      if (currentRoute) {
-        currentRoute.setMap(null);
-      }
-      var polyline = new google.maps.Polyline({
-        path: data.features[0].geometry.coordinates.map(function (coords) {
-          return { lat: coords[1], lng: coords[0] };
-        }),
-        strokeColor: "blue",
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-      });
-      polyline.setMap(map);
-      var bounds = new google.maps.LatLngBounds();
-      polyline.getPath().forEach(function (latLng) {
-        bounds.extend(latLng);
-      });
-      map.fitBounds(bounds);
-      currentRoute = polyline;
-    });
-}
-
-function onLocationFound(e) {
-  var userLat = e.latLng.lat();
-  var userLng = e.latLng.lng();
-
-  var userMarker = new google.maps.Marker({
-    position: e.latLng,
-    map: map,
-    title: "You are here",
+function initMap() {
+  const center = { lat: 2.935128336280701, lng: 99.00441168103137 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 8,
+    center,
+    mapId: "4504f8b37365c3d0",
   });
-  userMarker.setMap(map);
 
-  if (bandaraKualanamu.getPosition() && bandaraSilangit.getPosition()) {
-    getRoute(
-      bandaraKualanamu.getPosition().lat(),
-      bandaraKualanamu.getPosition().lng(),
-      bandaraSilangit.getPosition().lat(),
-      bandaraSilangit.getPosition().lng()
-    );
-  } else {
-    alert("Failed to get airport locations");
+  for (const property of properties) {
+    const advancedMarkerView = new google.maps.marker.AdvancedMarkerView({
+      map,
+      content: buildContent(property),
+      position: property.position,
+      title: property.description,
+    });
+    const element = advancedMarkerView.element;
+
+    ["focus", "pointerenter"].forEach((event) => {
+      element.addEventListener(event, () => {
+        highlight(advancedMarkerView, property);
+      });
+    });
+    ["blur", "pointerleave"].forEach((event) => {
+      element.addEventListener(event, () => {
+        unhighlight(advancedMarkerView, property);
+      });
+    });
+    advancedMarkerView.addListener("click", (event) => {
+      unhighlight(advancedMarkerView, property);
+    });
   }
 }
 
-function onLocationError(e) {
-  alert(e.message);
+function highlight(markerView, property) {
+  markerView.content.classList.add("highlight");
+  markerView.element.style.zIndex = 1;
 }
 
-var locationBtn = document.getElementById("location-btn");
+function unhighlight(markerView, property) {
+  markerView.content.classList.remove("highlight");
+  markerView.element.style.zIndex = "";
+}
 
-locationBtn.addEventListener("click", function () {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(onLocationFound, onLocationError);
-  } else {
-    alert("Geolocation is not supported by this browser.");
-  }
-});
+function buildContent(property) {
+  const content = document.createElement("div");
 
-getRoute();
+  content.classList.add("property");
+  content.innerHTML = `
+      <div class="icon">
+          <i aria-hidden="true" class="fa fa-icon fa-${property.type}" title="${property.type}"></i>
+          <span class="fa-sr-only">${property.type}</span>
+      </div>
+      <div class="details">
+          <div class="price">${property.price}</div>
+          <div class="address">${property.address}</div>
+          <div class="features">
+          <div>
+              <i aria-hidden="true" class="fa fa-bed fa-lg bed" title="bedroom"></i>
+              <span class="fa-sr-only">bedroom</span>
+              <span>${property.bed}</span>
+          </div>
+          <div>
+              <i aria-hidden="true" class="fa fa-bath fa-lg bath" title="bathroom"></i>
+              <span class="fa-sr-only">bathroom</span>
+              <span>${property.bath}</span>
+          </div>
+          <div>
+              <i aria-hidden="true" class="fa fa-ruler fa-lg size" title="size"></i>
+              <span class="fa-sr-only">size</span>
+              <span>${property.size} ft<sup>2</sup></span>
+          </div>
+          </div>
+      </div>
+      `;
+  return content;
+}
+
+const properties = [
+  {
+    address: "215 Emily St, MountainView, CA",
+    description: "Single family house with modern design",
+    price: "$ 3,889,000",
+    type: "home",
+    bed: 5,
+    bath: 4.5,
+    size: 300,
+    position: { lat: 2.694433262223637, lng: 98.81978988647461 },
+  },
+  {
+    address: "108 Squirrel Ln &#128063;, Menlo Park, CA",
+    description: "Townhouse with friendly neighbors",
+    price: "$ 3,050,000",
+    type: "building",
+    bed: 4,
+    bath: 3,
+    size: 200,
+    position: { lat: 2.6773717191046456, lng: 98.8538646697998 },
+  },
+  {
+    address: "100 Chris St, Portola Valley, CA",
+    description: "Spacious warehouse great for small business",
+    price: "$ 3,125,000",
+    type: "warehouse",
+    bed: 4,
+    bath: 4,
+    size: 800,
+    position: { lat: 2.5572055152613697, lng: 98.91317367553711 },
+  },
+];
+
+window.initMap = initMap;

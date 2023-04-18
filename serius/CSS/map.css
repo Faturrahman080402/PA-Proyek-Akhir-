@@ -39,7 +39,8 @@ header #toggle::before {
   height: 2px;
   background: #fff;
 }
-header #toggle:after {
+
+header #toggle::after {
   content: "";
   position: absolute;
   bottom: 7px;
@@ -48,7 +49,7 @@ header #toggle:after {
   background: #fff;
 }
 
-.banner.active header #toggle:before {
+.banner.active header #toggle::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
@@ -58,12 +59,10 @@ header #toggle:after {
   left: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-
 .banner {
-  position: relative;
   width: 100%;
   padding: 60px;
-  background: #000000;
+  background: #000;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -71,17 +70,20 @@ header #toggle:after {
   z-index: 2;
   border: none;
 }
-
-.banner.active {
-  transform: translate(-400px);
+.banner .banner.active {
+  transform: translateX(-400px);
 }
+.banner.active {
+  transform: translateX(-400px);
+}
+/*navigation*/
 #navigation {
   position: fixed;
   top: 0;
   right: -400px;
   width: 400px;
   height: 100vh;
-  background: #40c3ff;
+  background: #000;
   z-index: 1;
   display: grid;
   place-items: center;
@@ -106,71 +108,23 @@ header #toggle:after {
   font-weight: 600;
   text-transform: uppercase;
 }
-
-/**/
 #map {
   height: 100vh;
   width: 100%;
 }
-
 #mapid {
-  height: 500px;
+  height: 1067px;
   width: 100%;
-  margin-top: 10px;
 }
 
-/* css untuk mengatur tampilan elemen <div id="mapid"> */
-#mapid {
-  height: 869px;
-  width: 100%;
-  margin-top: 20px;
-}
-
-/* search bar */
-.searchbar {
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: #000000;
-  border: none;
-}
-
-.searchbar .search-bar {
-  width: 100%;
-  margin: auto;
-  max-width: 700px;
-  background-color: #40c3ff;
-  border-radius: 60px;
-  padding: 10px 20px;
+/*footer*/
+.footer {
+  background: #000000;
+  color: #fff;
+  padding: 8px 100px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+  justify-content: space-between;
 }
-
-.search-bar input {
-  background: transparent;
-  width: 100%;
-  border: 0;
-  outline: none;
-  padding: 24px 20px;
-  font-size: 20px;
-  color: #cac7ff;
-}
-
-::placeholder {
-  color: #cac7ff;
-}
-
-.search-bar button img {
-  width: 25px;
-}
-
-.search-bar button {
-  border: 0;
-  border-radius: 30px;
-  width: 60px;
-  height: 60px;
-  background: #58629b;
-  cursor: pointer;
+.footer p {
+  font-size: 14px;
 }
