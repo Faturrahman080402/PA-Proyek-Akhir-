@@ -1,0 +1,342 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*header*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  z-index: 100;
+  transition: 0.6s;
+  background: #000;
+  align-items: center;
+}
+
+.logo {
+  position: relative;
+  font-weight: bold;
+  color: #0dcdc2;
+  text-decoration: none;
+  font-size: 2.8em;
+  letter-spacing: 2px;
+  transition: 0.6s;
+}
+
+/* navigasi */
+.navigation a {
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  margin-left: 5px;
+  transition: background 0.3s ease;
+  position: relative;
+  z-index: 1;
+  padding: 5px 10px;
+  /* Tambahkan border tipis putih pada menu yang aktif */
+  border: 1px solid transparent;
+}
+
+.navigation a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  right: -5px;
+  bottom: 0;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.233);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navigation a:hover::before,
+.navigation a.active::before {
+  opacity: 1;
+}
+
+/* Tambahkan style untuk menu yang aktif */
+.navigation a.active {
+  border-color: #ffffff;
+  border-radius: 100px;
+}
+
+.nav-item.dropdown {
+  position: relative;
+  float: right;
+  margin-left: 15px;
+}
+
+.nav-link.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  content: "\25BC";
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+/* CSS untuk bagian body */
+.body {
+  background-color: #f2f2f2;
+  padding: 50px 0;
+}
+
+.bodyBx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.content {
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.btn-box {
+  margin-top: 40px;
+}
+
+a {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 2px solid #333;
+  border-radius: 25px;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/*judul
+
+/* Popular Destination */
+.popular-destination {
+  padding: 20px 0;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #777;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.destination-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.destination-item {
+  width: calc(33.33% - 40px);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  position: relative;
+  /* menambahkan posisi relatif untuk efek mengambang */
+  overflow: hidden;
+  /* mengatur overflow menjadi hidden untuk mengatur efek mengambang */
+}
+
+.destination-image {
+  max-width: 100%;
+  height: 350px;
+  /* ukuran gambar yang diperbesar */
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+  /* menambahkan transisi transform untuk efek mengambang */
+}
+
+.destination-title {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.destination-description {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.destination-link {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.destination-link:hover {
+  text-decoration: underline;
+}
+
+/* Efek mengambang saat hover */
+.destination-item:hover .destination-image {
+  transform: scale(1.1);
+  border-radius: 20px;
+  /* memberikan efek perbesaran pada gambar saat hover */
+}
+
+
+/*efek responsif*/
+
+/*responsif header*/
+/* Tambahkan style untuk logo menjadi lebih kecil pada layar kecil */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 3.5em;
+    /* Mengurangi ukuran font pada layar kecil */
+  }
+}
+
+/* Tambahkan style untuk navigasi menjadi flex column pada layar kecil */
+@media (max-width: 768px) {
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navigation a {
+    margin: 0;
+    /* Menghapus margin pada layar kecil */
+  }
+}
+
+/* Tambahkan style untuk menu yang aktif pada layar kecil */
+@media (max-width: 768px) {
+  .navigation a.active {
+    border-width: 1px;
+    /* Mengurangi ketebalan border pada layar kecil */
+  }
+}
+
+/* Tambahkan style untuk logo menjadi lebih besar pada layar besar */
+@media (min-width: 900px) {
+  .logo {
+    font-size: 3em;
+    /* Menambahkan ukuran font pada layar besar */
+  }
+}
+
+/* Tambahkan style untuk padding pada header pada layar besar */
+@media (min-width: 900px) {
+  header {
+    padding: 20px 5%;
+    /* Mengurangi padding kiri dan kanan pada layar besar */
+  }
+}
+
+/* Tambahkan style untuk margin pada navigasi pada layar besar */
+@media (min-width: 900px) {
+  .navigation {
+    margin-right: 120px;
+    /* Menambahkan margin kanan pada layar besar */
+  }
+}
+
+/* Tambahkan style untuk menu yang aktif pada layar besar */
+@media (min-width: 900px) {
+  .navigation a.active {
+    border-width: 2px;
+    /* Menambahkan ketebalan border pada layar besar */
+  }
+}
+
+/* Tambahkan style untuk logo menjadi lebih besar pada layar besar */
+@media (min-width: 1200px) {
+  .logo {
+    font-size: 3.5em;
+    /* Menambahkan ukuran font pada layar besar */
+  }
+}
+
+
+/*responsif navigasi*/
+/* Tambahkan style untuk navigasi pada layar menengah (min-width: 768px) */
+@media (min-width: 768px) {
+  .navigation a {
+    font-size: 20px;
+    /* Menambahkan ukuran font pada layar menengah */
+    margin-left: 15px;
+    /* Menambahkan margin kiri pada layar menengah */
+    padding: 8px 16px;
+    /* Mengurangi padding atas dan bawah pada layar menengah */
+  }
+
+  .navigation a::before {
+    left: -4px;
+    /* Menambahkan margin kiri pada pseudo-element pada layar menengah */
+    right: -4px;
+    /* Menambahkan margin kanan pada pseudo-element pada layar menengah */
+  }
+}
+
+/* Tambahkan style untuk menu yang aktif pada layar menengah */
+@media (min-width: 768px) {
+
+  .navigation a.active,
+  .navigation a.active::before {
+    border-color: #fff;
+    border-radius: 100px;
+  }
+}
+
+
+/*responsif content */
