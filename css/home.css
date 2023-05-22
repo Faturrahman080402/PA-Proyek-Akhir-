@@ -20,19 +20,20 @@ header {
   background: #000;
   align-items: center;
 }
+
 .logo {
   position: relative;
   font-weight: bold;
   color: #0dcdc2;
   text-decoration: none;
-  font-size: 2.8em;
+  font-size: 3em;
   letter-spacing: 2px;
   transition: 0.6s;
 }
 
 /* navigasi */
 .navigation a {
-  font-size: 18px;
+  font-size: 20px;
   color: #ffffff;
   text-decoration: none;
   font-weight: 400;
@@ -57,10 +58,12 @@ header {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 .navigation a:hover::before,
 .navigation a.active::before {
   opacity: 1;
 }
+
 /* Tambahkan style untuk menu yang aktif */
 .navigation a.active {
   border-color: #ffffff;
@@ -109,7 +112,7 @@ header {
 .body .bodyBx {
   position: relative;
   background: linear-gradient(to left, #00000000, transparent),
-    linear-gradient(to right, #000000 1%, transparent), url(../bgbg2.jpg);
+    linear-gradient(to right, #000000 1%, transparent), url(img/bgbg2.jpg );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -128,7 +131,7 @@ header {
   content: "";
   background: #000;
   position: absolute;
-  max-height: 69vh;
+  max-height: 69.5vh;
   top: 0;
   bottom: 0;
   left: 0;
@@ -148,11 +151,13 @@ header {
   margin: 20px 0 40px;
   color: #fff;
 }
+
 .body .content .btn-box {
   display: flex;
   width: 345px;
   height: 50px;
 }
+
 .btn-box a {
   display: inline-flex;
   justify-content: center;
@@ -180,8 +185,8 @@ header {
 }
 
 .section-subtitle {
-  font-size: 18px;
-  color: #777;
+  font-size: 24px;
+  color: #000000;
 }
 
 .container {
@@ -204,27 +209,32 @@ header {
   padding: 20px;
   margin: 20px;
   text-align: center;
-  position: relative; /* menambahkan posisi relatif untuk efek mengambang */
-  overflow: hidden; /* mengatur overflow menjadi hidden untuk mengatur efek mengambang */
+  position: relative;
+  /* menambahkan posisi relatif untuk efek mengambang */
+  overflow: hidden;
+  /* mengatur overflow menjadi hidden untuk mengatur efek mengambang */
 }
 
 .destination-image {
-  max-width: 100%;
-  height: 350px; /* ukuran gambar yang diperbesar */
+  width: 650px;
+  height: 350px;
+  /* ukuran gambar yang diperbesar */
   object-fit: cover;
   border-radius: 20px;
-  transition: transform 0.3s ease-in-out; /* menambahkan transisi transform untuk efek mengambang */
+  transition: transform 0.3s ease-in-out;
+  /* menambahkan transisi transform untuk efek mengambang */
 }
 
 .destination-title {
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: bold;
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
 .destination-description {
-  font-size: 18px;
-  color: #777;
+  font-size: 22px;
+  color: #000000;
   margin-bottom: 10px;
 }
 
@@ -241,21 +251,24 @@ header {
 /* Efek mengambang saat hover */
 .destination-item:hover .destination-image {
   transform: scale(1.1);
-  border-radius: 20px; /* memberikan efek perbesaran pada gambar saat hover */
+  border-radius: 20px;
+  /* memberikan efek perbesaran pada gambar saat hover */
 }
 
 /*testinmonials*/
 
 .testimonial {
-  background: url(../1.jpeg);
+  background: url(img/1.jpeg);
+  background-size: cover;
+  min-height: 800px;
   padding: 60px 0;
 }
 
-.heading {
+.testimonial .heading {
   text-align: center;
-  font-size: 32px;
+  font-size: 72px;
   font-weight: bold;
-  color: #000;
+  color: #0dcdc2;
   margin-bottom: 40px;
 }
 
@@ -267,14 +280,15 @@ header {
 }
 
 .contentBx {
-  width: 400px;
-  padding: 40px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 160px;
 }
 
 .testimonialContent {
@@ -285,18 +299,19 @@ header {
   margin-top: 20px;
 }
 
-p {
-  font-size: 18px;
-  color: #000;
+.contentBx p {
+  font-size: 24px;
+  color: #ffffff;
   line-height: 1.6;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
-  color: #000;
+  color: #0dcdc2;
   margin-top: 20px;
 }
+
 .testimonial .rating {
   display: flex;
   justify-content: center;
@@ -312,11 +327,12 @@ h3 {
 .heading {
   text-align: center;
   padding: 2.5rem;
-  font-size: 3.5rem;
+  font-size: 3.9rem;
   border-radius: 0.5rem;
   padding: 2rem 1rem;
   color: #0dcdc2;
 }
+
 .services {
   text-align: center;
   color: #000;
@@ -337,24 +353,26 @@ h3 {
   text-align: center;
   white-space: normal;
 }
+
 .services .box-container .box:hover {
   color: #0dcdc2;
 }
 
 .services .box-container .box i {
   padding: 1rem;
-  font-size: 5rem;
+  font-size: 5.5 xrem;
 }
 
 .services .box-container .box h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-top: 1rem;
 }
 
 .services .box-container .box p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 0.5rem 0;
 }
+
 .services .box-container :hover {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
@@ -373,10 +391,20 @@ h3 {
   display: flex;
   width: 50%;
 }
+
 .about .left img.imgabout {
-  max-width: 700px;
-  margin-right: 50px;
+  position: sticky;
+  max-width: 1000px;
+  border-radius: 100px;
+  box-shadow: -30px 20px 40px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
 }
+
+.about .left img.imgabout:hover {
+  transform: translateY(-20px);
+  box-shadow: -50px 40px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
 .about .about-content {
   padding: 100px;
   width: 50%;
@@ -389,6 +417,7 @@ h3 {
   letter-spacing: 1px;
   margin-bottom: 5px;
 }
+
 hr {
   color: #0dcdc2;
   border: none;
@@ -423,14 +452,15 @@ hr::after {
 }
 
 .text {
-  color: #000;
-  font-size: 28px;
+  color: #000000;
+  font-size: 32px;
   font-weight: 300;
   letter-spacing: 1px;
 }
+
 h5 {
   color: #0dcdc2;
-  font-size: 58px;
+  font-size: 72px;
 }
 
 /* Mengatur tampilan footer */
@@ -452,7 +482,8 @@ h5 {
 /* Tambahkan style untuk logo menjadi lebih kecil pada layar kecil */
 @media (max-width: 768px) {
   .logo {
-    font-size: 2.5em; /* Mengurangi ukuran font pada layar kecil */
+    font-size: 2.5em;
+    /* Mengurangi ukuran font pada layar kecil */
   }
 }
 
@@ -466,68 +497,80 @@ h5 {
   }
 
   .navigation a {
-    margin: 0; /* Menghapus margin pada layar kecil */
+    margin: 0;
+    /* Menghapus margin pada layar kecil */
   }
 }
 
 /* Tambahkan style untuk menu yang aktif pada layar kecil */
 @media (max-width: 768px) {
   .navigation a.active {
-    border-width: 1px; /* Mengurangi ketebalan border pada layar kecil */
+    border-width: 1px;
+    /* Mengurangi ketebalan border pada layar kecil */
   }
 }
+
 /* Tambahkan style untuk logo menjadi lebih besar pada layar besar */
 @media (min-width: 900px) {
   .logo {
-    font-size: 3em; /* Menambahkan ukuran font pada layar besar */
+    font-size: 3em;
+    /* Menambahkan ukuran font pada layar besar */
   }
 }
 
 /* Tambahkan style untuk padding pada header pada layar besar */
 @media (min-width: 900px) {
   header {
-    padding: 20px 5%; /* Mengurangi padding kiri dan kanan pada layar besar */
+    padding: 20px 5%;
+    /* Mengurangi padding kiri dan kanan pada layar besar */
   }
 }
 
 /* Tambahkan style untuk margin pada navigasi pada layar besar */
 @media (min-width: 900px) {
   .navigation {
-    margin-right: 20px; /* Menambahkan margin kanan pada layar besar */
+    margin-right: 20px;
+    /* Menambahkan margin kanan pada layar besar */
   }
 }
 
 /* Tambahkan style untuk menu yang aktif pada layar besar */
 @media (min-width: 900px) {
   .navigation a.active {
-    border-width: 2px; /* Menambahkan ketebalan border pada layar besar */
+    border-width: 2px;
+    /* Menambahkan ketebalan border pada layar besar */
   }
 }
+
 /* Tambahkan style untuk logo menjadi lebih besar pada layar besar */
 @media (min-width: 1200px) {
   .logo {
-    font-size: 3.5em; /* Menambahkan ukuran font pada layar besar */
+    font-size: 3.5em;
+    /* Menambahkan ukuran font pada layar besar */
   }
 }
 
 /* Tambahkan style untuk padding pada header pada layar besar */
 @media (min-width: 1200px) {
   header {
-    padding: 20px 5%; /* Mengurangi padding kiri dan kanan pada layar besar */
+    padding: 20px 5%;
+    /* Mengurangi padding kiri dan kanan pada layar besar */
   }
 }
 
 /* Tambahkan style untuk margin pada navigasi pada layar besar */
 @media (min-width: 1200px) {
   .navigation {
-    margin-right: 20px; /* Menambahkan margin kanan pada layar besar */
+    margin-right: 20px;
+    /* Menambahkan margin kanan pada layar besar */
   }
 }
 
 /* Tambahkan style untuk menu yang aktif pada layar besar */
 @media (min-width: 1200px) {
   .navigation a.active {
-    border-width: 2px; /* Menambahkan ketebalan border pada layar besar */
+    border-width: 2px;
+    /* Menambahkan ketebalan border pada layar besar */
   }
 }
 
@@ -535,55 +578,73 @@ h5 {
 /* Tambahkan style untuk navigasi pada layar menengah (min-width: 768px) */
 @media (min-width: 768px) {
   .navigation a {
-    font-size: 20px; /* Menambahkan ukuran font pada layar menengah */
-    margin-left: 15px; /* Menambahkan margin kiri pada layar menengah */
-    padding: 8px 16px; /* Mengurangi padding atas dan bawah pada layar menengah */
+    font-size: 20px;
+    /* Menambahkan ukuran font pada layar menengah */
+    margin-left: 15px;
+    /* Menambahkan margin kiri pada layar menengah */
+    padding: 8px 16px;
+    /* Mengurangi padding atas dan bawah pada layar menengah */
   }
 
   .navigation a::before {
-    left: -4px; /* Menambahkan margin kiri pada pseudo-element pada layar menengah */
-    right: -4px; /* Menambahkan margin kanan pada pseudo-element pada layar menengah */
+    left: -4px;
+    /* Menambahkan margin kiri pada pseudo-element pada layar menengah */
+    right: -4px;
+    /* Menambahkan margin kanan pada pseudo-element pada layar menengah */
   }
 }
 
 /* Tambahkan style untuk menu yang aktif pada layar menengah */
 @media (min-width: 768px) {
+
   .navigation a.active,
   .navigation a.active::before {
     border-color: #fff;
     border-radius: 100px;
   }
 }
+
 /* Tambahkan style untuk navigasi pada layar besar (min-width: 900px) */
 @media (min-width: 900px) {
   .navigation a {
-    font-size: 24px; /* Menambahkan ukuran font pada layar besar */
-    margin-left: 30px; /* Menambahkan margin kiri pada layar besar */
-    padding: 12px 24px; /* Mengurangi padding atas dan bawah pada layar besar */
+    font-size: 24px;
+    /* Menambahkan ukuran font pada layar besar */
+    margin-left: 30px;
+    /* Menambahkan margin kiri pada layar besar */
+    padding: 12px 24px;
+    /* Mengurangi padding atas dan bawah pada layar besar */
   }
 
   .navigation a::before {
-    left: -7px; /* Menambahkan margin kiri pada pseudo-element pada layar besar */
-    right: -7px; /* Menambahkan margin kanan pada pseudo-element pada layar besar */
+    left: -7px;
+    /* Menambahkan margin kiri pada pseudo-element pada layar besar */
+    right: -7px;
+    /* Menambahkan margin kanan pada pseudo-element pada layar besar */
   }
 }
 
 /* Tambahkan style untuk navigasi pada layar sangat besar (min-width: 1200px) */
 @media (min-width: 1200px) {
   .navigation a {
-    font-size: 26px; /* Menambahkan ukuran font pada layar sangat besar */
-    margin-left: 40px; /* Menambahkan margin kiri pada layar sangat besar */
-    padding: 15px 30px; /* Mengurangi padding atas dan bawah pada layar sangat besar */
+    font-size: 26px;
+    /* Menambahkan ukuran font pada layar sangat besar */
+    margin-left: 40px;
+    /* Menambahkan margin kiri pada layar sangat besar */
+    padding: 15px 30px;
+    /* Mengurangi padding atas dan bawah pada layar sangat besar */
   }
 
   .navigation a::before {
-    left: -9px; /* Menambahkan margin kiri pada pseudo-element pada layar sangat besar */
-    right: -9px; /* Menambahkan margin kanan pada pseudo-element pada layar sangat besar */
+    left: -9px;
+    /* Menambahkan margin kiri pada pseudo-element pada layar sangat besar */
+    right: -9px;
+    /* Menambahkan margin kanan pada pseudo-element pada layar sangat besar */
   }
 }
 
 /* Tambahkan style untuk menu yang aktif pada layar besar dan sangat besar */
 @media (min-width: 900px) {
+
   .navigation a.active,
   .navigation a.active::before {
     border-color: #fff;

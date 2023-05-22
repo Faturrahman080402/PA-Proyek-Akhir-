@@ -68,38 +68,32 @@
                         <li class="destination-item">
                             <img src="img/taman eden.jpeg" alt="Destination 1" class="destination-image">
                             <h3 class="destination-title">Taman Eden 100</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <p class="destination-description">Taman Eden 100 adalah destinasi wisata yang menawarkan keindahan alam yang luar biasa. Terletak di tengah hutan pinus di Kota Batu menawarkan suasana yang tenang dan menegangkan bagi pengunjung yang ingin melepas penat dari kehidupan sehari-hari. Di dalam Taman Eden 100 ini pengunjung dapat menikmati keindahan taman bunga yang indah dan air terjun spektakuler.</p>
                         </li>
                         <li class="destination-item">
                             <img src="img/efrata waterfal.jpg" alt="Destination 2" class="destination-image">
                             <h3 class="destination-title">Air Terjun Efrata</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <p class="destination-description">Air Terjun Efrata Sumut adalah destinasi wisata alam dengan pemandangan menakjubkan dan air yang jernih. Pengunjung dapat berenang, trekking, atau hanya menikmati keindahan pemandangan sekitar. Terdapat juga warung makan dengan kuliner khas Sumatera Utara. Cocok untuk pengunjung yang ingin menikmati suasana alami yang damai dan menenangkan.</p>
                         </li>
                         <li class="destination-item">
                             <img src="img/Inna Parapat Hotel.jpg" alt="Destination 3" class="destination-image">
                             <h3 class="destination-title">Inna Parapat Hotel</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <p class="destination-description">Air Inna Parapat adalah destinasi wisata di Danau Toba yang menawarkan pemandangan yang memukau dan aktivitas seperti berenang, snorkeling, dan diving. Terdapat juga fasilitas restoran, tempat penginapan, dan toko souvenir. Cocok untuk liburan bersama keluarga atau teman-teman.</p>
                         </li>
                         <li class="destination-item">
                             <img src="img/Puncak Sipinsur.jpg" alt="Destination 4" class="destination-image">
                             <h3 class="destination-title">Puncak Sipinsur</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <p class="destination-description">Puncak Sipincur di Simalungun, Sumatera Utara, menawarkan pemandangan sawah, perbukitan hijau, dan pegunungan yang spektakuler. Pengunjung dapat hiking dan berkemah sambil menikmati udara segar dan keindahan alam. Cocok untuk pecinta alam dan pengunjung yang mencari ketenangan.</p>
                         </li>
                         <li class="destination-item">
                             <img src="img/Lembah Bakkara.jpg" alt="Destination 5" class="destination-image">
                             <h3 class="destination-title">Lembah Bakkara</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <p class="destination-description">Lembah Bakkara di Humbang Hasundutan, Sumatera Utara, menawarkan pemandangan sawah, sungai, dan perbukitan yang indah. Pengunjung dapat hiking, panjat tebing, berkuda, atau mencoba aktivitas air. Juga terdapat warung makan untuk mencoba kuliner khas Sumatera Utara. Cocok untuk pengunjung yang ingin menikmati alam dan aktivitas menarik di sekitar lembah.</p>
                         </li>
                         <li class="destination-item">
                             <img src="img/bukit-simarjarunjung.jpg" alt="Destination 6" class="destination-image">
                             <h3 class="destination-title">Bukit Indah Simarjarunjung</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <p class="destination-description">Lembah Bakkara di Sumatera Utara menawarkan pemandangan sawah, sungai, dan perbukitan hijau yang indah. Pengunjung dapat melakukan hiking, panjat tebing, berkuda, atau aktivitas air. Terdapat juga warung makan untuk mencicipi kuliner khas. Cocok untuk pengunjung yang ingin menikmati alam dan aktivitas menarik di sekitar lembah.</p>
                         </li>
                     </ul>
                 </div>
@@ -305,20 +299,28 @@
                                 // Munculkan sidebar dan isi kontennya
                                 infoSidebar.style.display = 'block';
                                 infoSidebar.innerHTML = '<div class="location-info">' +
-                                    '<b><h1><b>Keterangan :</h1></b>' +
-                                    '<b><h1>' + locations[i][0] + '</h1><b>' +
-                                    '<h3>' + locations[i][4] + '</h3>' +
-                                    '<h1> Gambar </h1>' +
-                                    '<img src="' + locations[i][5] + '" style="width: 390px; height: 250px;">' +
-                                    '<h3> Rating </h3>' +
-                                    '<input type="checkbox" id="star1"><label for="star1"></label>' +
-                                    '<input type="checkbox" id="star2"><label for="star2"></label>' +
-                                    '<input type="checkbox" id="star3"><label for="star3"></label>' +
-                                    '<input type="checkbox" id="star4"><label for="star4"></label>' +
-                                    '<input type="checkbox" id="star5"><label for="star5"></label>' +
-                                    '<h3> Komentar </h3>' +
-                                    '<textarea id="comment"></textarea>' +
+                                    '<b>Keterangan :</b><br>' +
+                                    '<b><h1>' + locations[i][0] + '</h1><b><br>' +
+                                    '<b>Lokasi :</b><br>' +
+                                    '<h3>' + locations[i][4] + '</h3><br>' +
+                                    '<img src="' + locations[i][5] + '" style="width: 420px; height: 250px;"><br>' +
+                                    '<h3>Rating</h3><br>' +
+                                    '<div class="rating">' +
+                                    '<input type="radio" id="star5" name="rating" value="5">' +
+                                    '<label for="star5"></label><br>' +
+                                    '<input type="radio" id="star4" name="rating" value="4">' +
+                                    '<label for="star4"></label><br>' +
+                                    '<input type="radio" id="star3" name="rating" value="3">' +
+                                    '<label for="star3"></label><br>' +
+                                    '<input type="radio" id="star2" name="rating" value="2">' +
+                                    '<label for="star2"></label><br>' +
+                                    '<input type="radio" id="star1" name="rating" value="1">' +
+                                    '<label for="star1"></label><br>' +
+                                    '</div><br>' +
+                                    '<h3>Komentar</h3><br>' +
+                                    '<textarea id="comment"></textarea><br>' +
                                     '</div>';
+
 
                             };
                         })(marker, i));

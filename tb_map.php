@@ -57,7 +57,9 @@
                 </select>
             </datalist>
         </div>
-        <div id="map"></div>
+        <div class="map">
+            <div id="map"></div>
+        </div>
         <!--rekomendation-->
         <section class="Destination">
             <section class="popular-destination">
@@ -104,27 +106,28 @@
                     </ul>
                 </div>
             </section>
-            <footer style="background-color: #222222; color: #fff; padding: 50px 0;">
-                <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-                    <div style="flex: 1;">
-                        <h3 style="font-size: 24px; margin-bottom: 20px;">Kontak Kami</h3>
-                        <p style="font-size: 16px;">Alamat: Jl. Raya Puncak, Bogor, Indonesia</p>
-                        <p style="font-size: 16px;">Telepon: (021) 123456</p>
-                        <p style="font-size: 16px;">Email: info@contoh.com</p>
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="kontak">
+                        <h3 class="footer-heading">Kontak Kami</h3>
+                        <p class="footer-text">Alamat: Jl. Raya Puncak, Bogor, Indonesia</p>
+                        <p class="footer-text">Telepon: (021) 123456</p>
+                        <p class="footer-text">Email: info@contoh.com</p>
                     </div>
-                    <div style="flex: 1;">
-                        <h3 style="font-size: 24px; margin-bottom: 20px;">Ikuti Kami</h3>
-                        <ul style="list-style: none; padding: 0; margin: 0;">
-                            <li style="margin-bottom: 10px;"><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                            <li style="margin-bottom: 10px;"><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                            <li style="margin-bottom: 10px;"><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <div class="ikuti">
+                        <h3 class="footer-heading">Ikuti Kami</h3>
+                        <ul class="social-media">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
                         </ul>
                     </div>
                 </div>
-                <div style="background-color: #333; padding: 20px; text-align: center;">
-                    <p style="margin: 0; font-size: 16px;">© 2023 Contoh. All rights reserved.</p>
+                <div class="footer-bottom">
+                    <p class="footer-text">© 2023 Contoh. All rights reserved.</p>
                 </div>
             </footer>
+
 
             <script>
                 var input = document.getElementById("search-box");
@@ -263,7 +266,7 @@
                     <?php
                     include "database.php";
 
-                    $sql = "SELECT * FROM tb_wisata";
+                    $sql = "SELECT * FROM tb_map";
                     $result = $conn->query($sql);
 
                     $locations = [];
@@ -292,7 +295,7 @@
 
                     var button1 = document.createElement("button");
                     button1.id = "button1";
-                    button1.innerHTML = "Destinasi";
+                    button1.innerHTML = "Wisata";
                     map.controls[google.maps.ControlPosition.TOP_CENTER].push(button1);
                     button1.addEventListener("click", function() {
                         window.location.href = "tb_wisata.php";
@@ -375,20 +378,28 @@
                                 // Munculkan sidebar dan isi kontennya
                                 infoSidebar.style.display = 'block';
                                 infoSidebar.innerHTML = '<div class="location-info">' +
-                                    '<b><h1><b>Keterangan :</h1></b>' +
-                                    '<b><h1>' + locations[i][0] + '</h1><b>' +
-                                    '<h3>' + locations[i][4] + '</h3>' +
-                                    '<h1> Gambar </h1>' +
-                                    '<img src="' + locations[i][5] + '" style="width: 390px; height: 250px;">' +
-                                    '<h3> Rating </h3>' +
-                                    '<input type="checkbox" id="star1"><label for="star1"></label>' +
-                                    '<input type="checkbox" id="star2"><label for="star2"></label>' +
-                                    '<input type="checkbox" id="star3"><label for="star3"></label>' +
-                                    '<input type="checkbox" id="star4"><label for="star4"></label>' +
-                                    '<input type="checkbox" id="star5"><label for="star5"></label>' +
-                                    '<h3> Komentar </h3>' +
-                                    '<textarea id="comment"></textarea>' +
+                                    '<b>Keterangan :</b><br>' +
+                                    '<b><h1>' + locations[i][0] + '</h1><b><br>' +
+                                    '<b>Lokasi :</b><br>' +
+                                    '<h3>' + locations[i][4] + '</h3><br>' +
+                                    '<img src="' + locations[i][5] + '" style="width: 420px; height: 250px;"><br>' +
+                                    '<h3>Rating</h3><br>' +
+                                    '<div class="rating">' +
+                                    '<input type="radio" id="star5" name="rating" value="5">' +
+                                    '<label for="star5"></label><br>' +
+                                    '<input type="radio" id="star4" name="rating" value="4">' +
+                                    '<label for="star4"></label><br>' +
+                                    '<input type="radio" id="star3" name="rating" value="3">' +
+                                    '<label for="star3"></label><br>' +
+                                    '<input type="radio" id="star2" name="rating" value="2">' +
+                                    '<label for="star2"></label><br>' +
+                                    '<input type="radio" id="star1" name="rating" value="1">' +
+                                    '<label for="star1"></label><br>' +
+                                    '</div><br>' +
+                                    '<h3>Komentar</h3><br>' +
+                                    '<textarea id="comment"></textarea><br>' +
                                     '</div>';
+
                             };
                         })(marker, i));
                         markers.push(marker);
@@ -450,7 +461,7 @@
                             }
 
                         }
-                        map.fitBounds(bounds);
+                        q.fitBounds(bounds);
                     });
 
                 }

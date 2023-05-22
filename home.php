@@ -671,7 +671,7 @@
     <!--header-->
     <section class="header" id="home">
         <header>
-            <a href="../php/home.php" class="logo">iTravel</a>
+            <a href="home.php" class="logo">iTravel</a>
             <nav>
                 <ul>
                     <div class="navigation">
@@ -706,7 +706,7 @@
                 Transportation around Kualanamu to Silangit Airports!
             </p>
             <div class="btn-box">
-                <a href="../php/map.php">Try Now</a>
+                <a href="home.php">Try Now</a>
             </div>
         </div>
         </div>
@@ -890,10 +890,27 @@
     </section>
 
     <!--footer-->
-    <section class="footer">
-        <p>Copyright by &copy;Developer of iTravel</p>
-        <p></p>
-    </section>
+    <footer style="background-color: #222222; color: #fff; padding: 50px 0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <div style="flex: 1;">
+                <h3 style="font-size: 24px; margin-bottom: 20px;">Kontak Kami</h3>
+                <p style="font-size: 16px;">Alamat: Jl. Raya Puncak, Bogor, Indonesia</p>
+                <p style="font-size: 16px;">Telepon: (021) 123456</p>
+                <p style="font-size: 16px;">Email: info@contoh.com</p>
+            </div>
+            <div style="flex: 1;">
+                <h3 style="font-size: 24px; margin-bottom: 20px;">Ikuti Kami</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 10px;"><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="background-color: #333; padding: 20px; text-align: center;">
+            <p style="margin: 0; font-size: 16px;">© 2023 Contoh. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

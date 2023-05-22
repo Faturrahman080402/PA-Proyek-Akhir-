@@ -286,20 +286,28 @@
                                 // Munculkan sidebar dan isi kontennya
                                 infoSidebar.style.display = 'block';
                                 infoSidebar.innerHTML = '<div class="location-info">' +
-                                    '<b><h1><b>Keterangan :</h1></b>' +
-                                    '<b><h1>' + locations[i][0] + '</h1><b>' +
-                                    '<h3>' + locations[i][4] + '</h3>' +
-                                    '<h1> Gambar </h1>' +
-                                    '<img src="' + locations[i][5] + '" style="width: 390px; height: 250px;">' +
-                                    '<h3> Rating </h3>' +
-                                    '<input type="checkbox" id="star1"><label for="star1"></label>' +
-                                    '<input type="checkbox" id="star2"><label for="star2"></label>' +
-                                    '<input type="checkbox" id="star3"><label for="star3"></label>' +
-                                    '<input type="checkbox" id="star4"><label for="star4"></label>' +
-                                    '<input type="checkbox" id="star5"><label for="star5"></label>' +
-                                    '<h3> Komentar </h3>' +
-                                    '<textarea id="comment"></textarea>' +
+                                    '<b>Keterangan :</b><br>' +
+                                    '<b><h1>' + locations[i][0] + '</h1><b><br>' +
+                                    '<b>Lokasi :</b><br>' +
+                                    '<h3>' + locations[i][4] + '</h3><br>' +
+                                    '<img src="' + locations[i][5] + '" style="width: 420px; height: 250px;"><br>' +
+                                    '<h3>Rating</h3><br>' +
+                                    '<div class="rating">' +
+                                    '<input type="radio" id="star5" name="rating" value="5">' +
+                                    '<label for="star5"></label><br>' +
+                                    '<input type="radio" id="star4" name="rating" value="4">' +
+                                    '<label for="star4"></label><br>' +
+                                    '<input type="radio" id="star3" name="rating" value="3">' +
+                                    '<label for="star3"></label><br>' +
+                                    '<input type="radio" id="star2" name="rating" value="2">' +
+                                    '<label for="star2"></label><br>' +
+                                    '<input type="radio" id="star1" name="rating" value="1">' +
+                                    '<label for="star1"></label><br>' +
+                                    '</div><br>' +
+                                    '<h3>Komentar</h3><br>' +
+                                    '<textarea id="comment"></textarea><br>' +
                                     '</div>';
+
                             };
                         })(marker, i));
                         markers.push(marker);

@@ -66,40 +66,34 @@
                     <h3 class="section-subtitle">Check out some of our most popular travel destinations</h3>
                     <ul class="destination-list">
                         <li class="destination-item">
-                            <img src="img/taman eden.jpeg" alt="Destination 1" class="destination-image">
-                            <h3 class="destination-title">Taman Eden 100</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/niagara.jpg" alt="Destination 1" class="destination-image">
+                            <h3 class="destination-title">Hotel Niagara Parapat</h3>
+                            <p class="destination-description">Hotel Niagara Parapat di tepi Danau Toba menawarkan pemandangan indah dari kamar yang menghadap danau. Terdapat kolam renang, restoran, dan spa, serta dekat dengan tempat wisata seperti Bukit Indah Simarjarunjung dan Air Terjun Sipiso-piso. Pilihan tepat untuk menginap saat berkunjung ke Danau Toba.</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/efrata waterfal.jpg" alt="Destination 2" class="destination-image">
-                            <h3 class="destination-title">Air Terjun Efrata</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/parapat.jpg" alt="Destination 2" class="destination-image">
+                            <h3 class="destination-title">Khas Parapat Hotel</h3>
+                            <p class="destination-description">Khas Parapat Hotel di Sumatera Utara menawarkan kamar-kamar nyaman dan modern, serta restoran yang menyajikan makanan khas dan internasional. Dekat dengan tempat wisata di sekitar Parapat seperti Bukit Indah Simarjarunjung dan Air Terjun Sipiso-piso. Pilihan tepat untuk menginap saat berkunjung ke Parapat dan Danau Toba.</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/Inna Parapat Hotel.jpg" alt="Destination 3" class="destination-image">
-                            <h3 class="destination-title">Inna Parapat Hotel</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/gibeon1.jpg" alt="Destination 3" class="destination-image">
+                            <h3 class="destination-title">Sapadia Villa Bukit Gibeon</h3>
+                            <p class="destination-description"> Sapadia Villa Bukit Gibeon di Sumatera Utara menawarkan kamar-kamar luas dengan pemandangan yang spektakuler, dilengkapi dengan fasilitas seperti AC dan balkon pribadi. Terdapat juga kolam renang, lounge, dan restoran. Dekat dengan tempat wisata seperti Taman Alam Lumbini dan Air Terjun Sipiso-piso. Pilihan sempurna untuk menginap saat berkunjung ke Bukit Gibeon dan sekitarnya.</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/Puncak Sipinsur.jpg" alt="Destination 4" class="destination-image">
-                            <h3 class="destination-title">Puncak Sipinsur</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/toledo.jpg" alt="Destination 4" class="destination-image">
+                            <h3 class="destination-title">Toledo InnToledo Inn</h3>
+                            <p class="destination-description">Hotel di Pematangsiantar, Sumatera Utara menawarkan kamar-kamar modern dengan fasilitas seperti AC dan TV layar datar. Terdapat juga restoran, lounge, dan ruang rapat. Dekat dengan tempat wisata seperti Air Terjun Sipiso-piso dan Danau Toba. Pilihan tepat untuk menginap di Pematangsiantar.</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/Lembah Bakkara.jpg" alt="Destination 5" class="destination-image">
-                            <h3 class="destination-title">Lembah Bakkara</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/my nasha.jpg" alt="Destination 5" class="destination-image">
+                            <h3 class="destination-title">My Nasha Tigaras</h3>
+                            <p class="destination-description">My Nasha Tigaras Hotel di Tigaras, Sumatera Utara menawarkan kamar-kamar mewah dan nyaman dengan fasilitas modern seperti AC dan TV layar datar. Terdapat juga kolam renang, pusat kebugaran, spa, dan restoran. Dekat dengan tempat wisata seperti Danau Toba dan Bukit Indah Simarjarunjung. Pilihan tepat untuk menginap saat berkunjung ke Tigaras.</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/bukit-simarjarunjung.jpg" alt="Destination 6" class="destination-image">
-                            <h3 class="destination-title">Bukit Indah Simarjarunjung</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/sitito.jpg" alt="Destination 6" class="destination-image">
+                            <h3 class="destination-title">Hotel Sitio tio</h3>
+                            <p class="destination-description">Hotel Sitio Tio di Parapat, Sumatera Utara menawarkan kamar-kamar nyaman dengan fasilitas seperti AC, TV layar datar, dan kamar mandi pribadi. Dilengkapi dengan restoran, lounge, dan akses Wi-Fi gratis. Dekat dengan tempat wisata seperti Danau Toba dan Air Terjun Sipiso-piso. Pilihan yang tepat untuk menginap di Parapat.</p>
                         </li>
                     </ul>
                 </div>
@@ -303,20 +297,28 @@
                                 // Munculkan sidebar dan isi kontennya
                                 infoSidebar.style.display = 'block';
                                 infoSidebar.innerHTML = '<div class="location-info">' +
-                                    '<b><h1><b>Keterangan :</h1></b>' +
-                                    '<b><h1>' + locations[i][0] + '</h1><b>' +
-                                    '<h3>' + locations[i][4] + '</h3>' +
-                                    '<h1> Gambar </h1>' +
-                                    '<img src="' + locations[i][5] + '" style="width: 390px; height: 250px;">' +
-                                    '<h3> Rating </h3>' +
-                                    '<input type="checkbox" id="star1"><label for="star1"></label>' +
-                                    '<input type="checkbox" id="star2"><label for="star2"></label>' +
-                                    '<input type="checkbox" id="star3"><label for="star3"></label>' +
-                                    '<input type="checkbox" id="star4"><label for="star4"></label>' +
-                                    '<input type="checkbox" id="star5"><label for="star5"></label>' +
-                                    '<h3> Komentar </h3>' +
-                                    '<textarea id="comment"></textarea>' +
+                                    '<b>Keterangan :</b><br>' +
+                                    '<b><h1>' + locations[i][0] + '</h1><b><br>' +
+                                    '<b>Lokasi :</b><br>' +
+                                    '<h3>' + locations[i][4] + '</h3><br>' +
+                                    '<img src="' + locations[i][5] + '" style="width: 420px; height: 250px;"><br>' +
+                                    '<h3>Rating</h3><br>' +
+                                    '<div class="rating">' +
+                                    '<input type="radio" id="star5" name="rating" value="5">' +
+                                    '<label for="star5"></label><br>' +
+                                    '<input type="radio" id="star4" name="rating" value="4">' +
+                                    '<label for="star4"></label><br>' +
+                                    '<input type="radio" id="star3" name="rating" value="3">' +
+                                    '<label for="star3"></label><br>' +
+                                    '<input type="radio" id="star2" name="rating" value="2">' +
+                                    '<label for="star2"></label><br>' +
+                                    '<input type="radio" id="star1" name="rating" value="1">' +
+                                    '<label for="star1"></label><br>' +
+                                    '</div><br>' +
+                                    '<h3>Komentar</h3><br>' +
+                                    '<textarea id="comment"></textarea><br>' +
                                     '</div>';
+
                             };
                         })(marker, i));
                         markers.push(marker);

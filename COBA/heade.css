@@ -1,0 +1,180 @@
+html,
+body {
+    height: 95%;
+    margin: 1%;
+    padding: 3;
+    background-color: white !important;
+}
+
+
+
+.search {
+    position: relative;
+}
+
+.search input[type="text"] {
+    padding-right: 70px;
+    /* Menambahkan ruang kosong untuk tombol */
+}
+
+.search .options-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.search .options-container option {
+    padding: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.search button[type="submit"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 100%;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#search-options option {
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#search-box {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    color: black;
+    background-color: #fff;
+    margin: 14px;
+    font-family: 'Amarante';
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+
+
+#search-box::placeholder {
+    color: black;
+    font-weight: 500;
+
+}
+
+#search-box:focus {
+    outline: none;
+    border-color: black;
+    box-shadow: 0 8px 15px black(255, 140, 0, 0.4);
+}
+
+#info-sidebar {
+    width: 500px;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    display: none;
+}
+
+#options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+    background-color: #fff;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-top: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+#options option {
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#options option:hover {
+    background-color: #f2f2f2;
+}
+
+#options.show {
+    display: block;
+}
+
+.gm-style .custom-info-window {
+    display: none !important;
+}
+
+#map {
+    height: 1000px;
+    /* Atur tinggi peta */
+    width: 100%;
+    /* Atur lebar peta */
+}
+
+.btn {
+    width: 50px;
+    height: 30px;
+    padding: 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.9);
+    margin: 14px;
+    font-family: 'Amarante';
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    padding: 8px;
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+
+    margin: 14px;
+    font-family: 'Amarante';
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+button:hover {
+    background-color: #808980;
+    ;
+    color: wheat;
+    cursor: pointer;
+}

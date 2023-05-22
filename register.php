@@ -16,83 +16,56 @@
   <!-- <link rel="stylesheet" type="text/css" href="css/login.css"> -->
 
   <style>
+    body {
+      background-color: #fff;
+    }
+
     .container {
-      width: 100%;
-      margin: 0 auto;
-      max-width: 500px;
       background-color: #fff;
       padding: 20px;
-      border-radius: 5px;
+      border-radius: 30px;
+      box-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 100px;
     }
 
     .card {
-      border: none;
-      border-radius: 5px;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-control {
-      border-radius: 0px;
-      border: none;
-      border-bottom: 2px solid #999;
-    }
-
-    .form-control:focus {
-      box-shadow: none;
-      border-color: #12495A;
+      background-color: #fff;
+      margin: 0px;
+      padding: 20px;
+      border-radius: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
     .btn-dark {
-      background-color: #12495A;
-      border-color: #12495A;
+      background-color: #333333;
+      color: #ffffff;
+      border: none;
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
     }
 
-    .btn-dark:hover {
-      background-color: #0D3A45;
-      border-color: #0D3A45;
+    .btn-secondary {
+      background-color: #888888;
+      color: #ffffff;
+      border: none;
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
     }
 
-    .btn-dark:active {
-      background-color: #0A2E36;
-      border-color: #0A2E36;
+    .kembali {
+      margin-top: 10px;
     }
 
-    .btn-dark:focus {
-      box-shadow: none;
-    }
-
-    img.img-fluid {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Modifikasi tombol SIGN UP */
-    button[name="daftar"] {
-      font-size: 1.2rem;
-      font-weight: bold;
-      padding: 1rem 2rem;
-      margin-top: 1rem;
-    }
-
-    /* Modifikasi gambar */
-    .container img {
-      max-width: 50%;
-      margin-left: 25%;
-    }
-
-    /* Modifikasi tombol LOGIN */
-    .d-grid a.btn[type="button"] {
-      font-size: 1rem;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      border: 1px solid #212529;
-      color: #fff;
-      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    }
-
-    .d-grid a.btn[type="button"]:hover {
-      background-color: #212529;
-      color: #fff;
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
     }
   </style>
 </head>

@@ -66,40 +66,34 @@
                     <h3 class="section-subtitle">Check out some of our most popular travel destinations</h3>
                     <ul class="destination-list">
                         <li class="destination-item">
-                            <img src="img/taman eden.jpeg" alt="Destination 1" class="destination-image">
-                            <h3 class="destination-title">Taman Eden 100</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/airport kualanamu.jpg" alt="Destination 1" class="destination-image">
+                            <h3 class="destination-title">Airport Kualanamu</h3>
+                            <p class="destination-description">Bandara Internasional Kualanamu adalah bandara modern yang melayani penerbangan domestik dan internasional di Sumatera Utara. Dengan fasilitas yang lengkap dan modern, bandara ini menjadi pintu gerbang utama bagi wisatawan yang ingin menjelajahi Sumatera Utara.</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/efrata waterfal.jpg" alt="Destination 2" class="destination-image">
-                            <h3 class="destination-title">Air Terjun Efrata</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/airport silangit.jpg" alt="Destination 2" class="destination-image">
+                            <h3 class="destination-title">Airport Silangit</h3>
+                            <p class="destination-description">Bandara Silangit adalah gerbang utama ke Danau Toba yang terkenal di Sumatera Utara, Indonesia. Dengan terminal modern dan berbagai penerbangan langsung dari kota-kota besar di Indonesia, Bandara Silangit adalah pilihan terbaik untuk memulai perjalanan Anda ke destinasi wisata yang menakjubkan di sekitarnya.</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/Inna Parapat Hotel.jpg" alt="Destination 3" class="destination-image">
-                            <h3 class="destination-title">Inna Parapat Hotel</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/sampri.jpg" alt="Destination 3" class="destination-image">
+                            <h3 class="destination-title">Sampri</h3>
+                            <p class="destination-description">Loket Sampri adalah layanan penjualan tiket bus dan travel dengan berbagai rute tujuan di Sumatera Utara. Nikmati kemudahan memesan tiket dengan harga terjangkau dan layanan yang cepat dan ramah di loket Sampri.</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/Puncak Sipinsur.jpg" alt="Destination 4" class="destination-image">
-                            <h3 class="destination-title">Puncak Sipinsur</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/tigaraja.jpg" alt="Destination 4" class="destination-image">
+                            <h3 class="destination-title">Tigaraja</h3>
+                            <p class="destination-description">Pelabuhan Tigaraja - Pelabuhan di Sumatera Utara yang terletak di kota Balige dan merupakan gerbang utama menuju Danau Toba. Pelabuhan ini menyediakan fasilitas penyeberangan feri dan kapal penumpang untuk menuju ke Pulau Samosir dan sekitarnya.</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/Lembah Bakkara.jpg" alt="Destination 5" class="destination-image">
-                            <h3 class="destination-title">Lembah Bakkara</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/helvetia.jpg" alt="Destination 5" class="destination-image">
+                            <h3 class="destination-title">Helvetia</h3>
+                            <p class="destination-description">Deskripsi singkat promosi loket helvetia: Promosi loket Helvetia, layanan yang memberikan kemudahan dalam melakukan berbagai transaksi keuangan seperti pembayaran tagihan, pengisian pulsa, pembelian tiket, dan lain sebagainya..</p>
                         </li>
                         <li class="destination-item">
-                            <img src="img/bukit-simarjarunjung.jpg" alt="Destination 6" class="destination-image">
-                            <h3 class="destination-title">Bukit Indah Simarjarunjung</h3>
-                            <p class="destination-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut iaculis
-                                enim.</p>
+                            <img src="img/pelabuhan balige.jpg" alt="Destination 6" class="destination-image">
+                            <h3 class="destination-title">6. Pelabuhan Balige</h3>
+                            <p class="destination-description">Pelabuhan Balige adalah sebuah pelabuhan di kawasan Danau Toba, Sumatera Utara, Indonesia. Pelabuhan ini menyediakan kapal penumpang yang beroperasi menuju beberapa kota di sekitar Danau Toba, termasuk ke pulau Samosir. Pelabuhan ini juga terletak dekat dengan beberapa objek wisata</p>
                         </li>
                     </ul>
                 </div>
@@ -297,20 +291,28 @@
                                 // Munculkan sidebar dan isi kontennya
                                 infoSidebar.style.display = 'block';
                                 infoSidebar.innerHTML = '<div class="location-info">' +
-                                    '<b><h1><b>Keterangan :</h1></b>' +
-                                    '<b><h1>' + locations[i][0] + '</h1><b>' +
-                                    '<h3>' + locations[i][4] + '</h3>' +
-                                    '<h1> Gambar </h1>' +
-                                    '<img src="' + locations[i][5] + '" style="width: 390px; height: 250px;">' +
-                                    '<h3> Rating </h3>' +
-                                    '<input type="checkbox" id="star1"><label for="star1"></label>' +
-                                    '<input type="checkbox" id="star2"><label for="star2"></label>' +
-                                    '<input type="checkbox" id="star3"><label for="star3"></label>' +
-                                    '<input type="checkbox" id="star4"><label for="star4"></label>' +
-                                    '<input type="checkbox" id="star5"><label for="star5"></label>' +
-                                    '<h3> Komentar </h3>' +
-                                    '<textarea id="comment"></textarea>' +
+                                    '<b>Keterangan :</b><br>' +
+                                    '<b><h1>' + locations[i][0] + '</h1><b><br>' +
+                                    '<b>Lokasi :</b><br>' +
+                                    '<h3>' + locations[i][4] + '</h3><br>' +
+                                    '<img src="' + locations[i][5] + '" style="width: 420px; height: 250px;"><br>' +
+                                    '<h3>Rating</h3><br>' +
+                                    '<div class="rating">' +
+                                    '<input type="radio" id="star5" name="rating" value="5">' +
+                                    '<label for="star5"></label><br>' +
+                                    '<input type="radio" id="star4" name="rating" value="4">' +
+                                    '<label for="star4"></label><br>' +
+                                    '<input type="radio" id="star3" name="rating" value="3">' +
+                                    '<label for="star3"></label><br>' +
+                                    '<input type="radio" id="star2" name="rating" value="2">' +
+                                    '<label for="star2"></label><br>' +
+                                    '<input type="radio" id="star1" name="rating" value="1">' +
+                                    '<label for="star1"></label><br>' +
+                                    '</div><br>' +
+                                    '<h3>Komentar</h3><br>' +
+                                    '<textarea id="comment"></textarea><br>' +
                                     '</div>';
+
                             };
                         })(marker, i));
                         markers.push(marker);

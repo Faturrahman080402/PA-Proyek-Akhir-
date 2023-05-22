@@ -1,7 +1,7 @@
 <?php
 require("connection/Connection.php");
 
-if(isset($_POST['login'])) {
+if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -21,7 +21,7 @@ if(isset($_POST['login'])) {
     $sql = "SELECT * FROM akun_user WHERE Email='$email' AND Password='$password'";
     $result = mysqli_query($db, $sql);
 
-    if(mysqli_num_rows($result) == 1) {
+    if (mysqli_num_rows($result) == 1) {
         $nama = $_SESSION['email'];
         // Kredensial valid, arahkan ke halaman dashboard
         header('Location: home.php');
@@ -33,5 +33,4 @@ if(isset($_POST['login'])) {
     }
 } else {
     die("Akses dilarang...");
-} 
-?>
+}
